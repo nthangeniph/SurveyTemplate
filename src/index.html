@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Survey Template</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1 class="survey-header">SURVEY TEMPLATE</h1>
+      <div class="questions-container">
+        <div class="question-answer">
+          <div class="question">
+            <div class="dot">
+              <span class="numbering">1</span>
+            </div>
+            <h2>What is your name ?</h2>
+          </div>
+
+          <div class="answer">
+            <span class="arrow-answer">&#10551;</span>
+            <input class="standard-input" />
+          </div>
+        </div>
+
+        <div class="question-answer">
+          <div class="question">
+            <div class="dot">
+              <span class="numbering">2</span>
+            </div>
+            <h2>Are you a still going to Limpopo?</h2>
+          </div>
+
+          <div class="answer-yes-no">
+            <span class="arrow-answer">&#10551;</span>
+            <div class="yes-no">
+                <input type="radio" id="yes" name="yes/no" value="{1}" />   <label for="html">Yes</label><br />
+                <input type="radio" id="no" name="yes/no" value="{0}" />   <label for="css">No</label><br />
+               
+            </div>
+          </div>
+        </div>
+
+        <div class="question-answer">
+          <div class="question">
+            <div class="dot">
+              <span class="numbering">3</span>
+            </div>
+            <h2>Rate your experience from 1 to 10</h2>
+          </div>
+
+          <div class="answer">
+            <span class="arrow-answer">&#10551;</span>
+            <input class="standard-input" type="range" min="0" max="10" />
+          </div>
+        </div>
+
+        <div class="question-answer">
+          <div class="question">
+            <div class="dot">
+              <span class="numbering">4</span>
+            </div>
+            <h2>Write your mini bio.</h2>
+          </div>
+          <div class="answer-checkRadio">
+            <span class="arrow-answer">&#10551;</span>
+            <div class="radioQuestions">
+              <input type="radio" id="vehicle1" name="vehicle3" value="Bike" />
+              <label> Agree</label><br />
+              <input type="radio" id="vehicle1" name="vehicle3" value="Car" />
+              <label> Strongly Agrewe</label><br />
+              <input type="radio" id="vehicle3" name="vehicle3" value="Boat" />
+              <label> Disagree</label><br /><br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js" />
+  </body>
+</html>
