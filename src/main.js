@@ -12,6 +12,25 @@ const dummyQuestions = [
     questionId: "77tvjv43djvjeds",
   },
   {
+    question: "What's you mode of transport?",
+    type: "multiCheckBox",
+    questionId: "85411s686hhh",
+    options: [
+      {
+        text: "I have a bike",
+        value: 1,
+      },
+      {
+        text: "I have a car",
+        value: 2,
+      },
+      {
+        text: "I have a Boat",
+        value: 3,
+      },
+    ],
+  },
+  {
     question: "Rate your experience from 1 to 10",
     type: "range",
     questionId: "77tv1qaqvjvjvjeds",
@@ -39,11 +58,6 @@ const dummyQuestions = [
     question: "Write your short bio",
     type: "textArea",
     questionId: "7987v1qaqvjvjeds",
-  },
-  {
-    question: "what is your name ?",
-    type: "input",
-    questionId: "fgyvujbjbu8",
   },
 ];
 
@@ -76,10 +90,10 @@ function questionsGenerator(question, type, questionId, questionNumber, options 
         "<div class='answer-yes-no'>" +
         "<span class='arrow-answer'>&#10551;</span>" +
         "<div class='yes-no'>" +
-        `<input type="radio" id="yes" name=${questionId} value="{1}" />` +
+        `<input type="radio" id=${questionId} name=${questionId} value="{1}" />` +
         "<label for='yes'>Yes</label>" +
         "<br />" +
-        `<input type="radio" id="no" name=${questionId} value="{0}" />` +
+        `<input type="radio" id=${questionId}  name=${questionId} value="{0}" />` +
         "<label for='no'>No</label>" +
         "<br/>" +
         "</div>" +
@@ -135,10 +149,35 @@ function questionsGenerator(question, type, questionId, questionNumber, options 
         "</div>" +
         "</div>"
       );
+
+    case "multiCheckBox":
+      return (
+        "<div class='question-answer'>" +
+        "<div class='question'>" +
+        "<div class='dot'>" +
+        `<span class='numbering'>${questionNumber}</span>` +
+        "</div>" +
+        `<h2>${question}</h2>` +
+        " </div>" +
+        "<div class='answer-checkRadio'>" +
+        "<span class='arrow-answer'>&#10551;</span>" +
+        " <div class='radioQuestions'>" +
+        checkOptionCreator(questionId, options) +
+        "</div>" +
+        "</div>" +
+        "</div>"
+      );
     default:
       return null;
   }
 }
+
+let questionViews = "";
+
+dummyQuestions.forEach(({ question, questionId, type, options }, index) => {
+  questionViews += questionsGenerator(question, type, questionId, index + 1, options);
+});
+questionContainer.innerHTML = questionViews;
 
 function radioOptionCreator(questionId, options) {
   let initiaOptions = "";
@@ -149,9 +188,11 @@ function radioOptionCreator(questionId, options) {
   return initiaOptions;
 }
 
-let questionViews = "";
-
-dummyQuestions.forEach(({ question, questionId, type, options }, index) => {
-  questionViews += questionsGenerator(question, type, questionId, index + 1, options);
-});
-questionContainer.innerHTML = questionViews;
+function checkOptionCreator(questionId, options) {
+  let initiaOptions = "";
+  options.forEach(({ text, value }) => {
+    initiaOptions +=
+      `<input type="checkbox" id=${questionId} name=${questionId} value=${value} />` + `<label>${text}</label><br />`;
+  }) + "</div>";
+  return initiaOptions;
+}

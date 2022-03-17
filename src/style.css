@@ -90,3 +90,18 @@ h2 {
 .radioQuestions {
   display: block;
 }
+
+.submitting-answers {
+  background-color: orange;
+  color: white;
+  width: 11rem;
+  height: 3rem;
+  border-radius: 5px;
+  position: relative;
+  top: 3%;
+  left: 40%;
+}
+.submitting-answers:hover {
+  cursor: pointer;
+  box-shadow: 5px 10px red;
+}
