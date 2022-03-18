@@ -1,19 +1,28 @@
 const questionContainer = document.querySelector(".questions-container");
 
+const questionTypes = Object.freeze({
+  input: 0,
+  textArea: 1,
+  range: 2,
+  yesNo: 3,
+  radioGroup: 4,
+  multiCheckBox: 5,
+});
+
 const dummyQuestions = [
   {
     question: "What is your home language ?",
-    type: "input",
+    type: 0,
     questionId: "77tvjvjvjvjvjeds",
   },
   {
     question: "Are you still going to Limpopo?",
-    type: "yes/no",
+    type: 3,
     questionId: "77tvjv43djvjeds",
   },
   {
     question: "What's you mode of transport?",
-    type: "multiCheckBox",
+    type: 5,
     questionId: "85411s686hhh",
     options: [
       {
@@ -32,12 +41,12 @@ const dummyQuestions = [
   },
   {
     question: "Rate your experience from 1 to 10",
-    type: "range",
+    type: 2,
     questionId: "77tv1qaqvjvjvjeds",
   },
   {
     question: " Do you agree with Russians?",
-    type: "radioGroup",
+    type: 4,
     questionId: "854758686hhh",
     options: [
       {
@@ -56,14 +65,14 @@ const dummyQuestions = [
   },
   {
     question: "Write your short bio",
-    type: "textArea",
+    type: 1,
     questionId: "7987v1qaqvjvjeds",
   },
 ];
 
 function questionsGenerator(question, type, questionId, questionNumber, options = []) {
   switch (type) {
-    case "input":
+    case questionTypes.input:
       return (
         "<div class='question-answer'>" +
         "<div class='question'>" +
@@ -78,7 +87,7 @@ function questionsGenerator(question, type, questionId, questionNumber, options 
         "</div>" +
         "</div>"
       );
-    case "yes/no":
+    case questionTypes.yesNo:
       return (
         "<div class='question-answer'>" +
         "<div class='question'>" +
@@ -100,7 +109,7 @@ function questionsGenerator(question, type, questionId, questionNumber, options 
         "</div>" +
         "</div>"
       );
-    case "range":
+    case questionTypes.range:
       return (
         "<div class='question-answer'>" +
         "<div class='question'>" +
@@ -115,7 +124,7 @@ function questionsGenerator(question, type, questionId, questionNumber, options 
         "</div>" +
         "</div>"
       );
-    case "textArea":
+    case questionTypes.textArea:
       return (
         "<div class='question-answer'>" +
         "<div class='question'>" +
@@ -132,7 +141,7 @@ function questionsGenerator(question, type, questionId, questionNumber, options 
         "</div>" +
         "</div>"
       );
-    case "radioGroup":
+    case questionTypes.radioGroup:
       return (
         "<div class='question-answer'>" +
         "<div class='question'>" +
@@ -150,7 +159,7 @@ function questionsGenerator(question, type, questionId, questionNumber, options 
         "</div>"
       );
 
-    case "multiCheckBox":
+    case questionTypes.multiCheckBox:
       return (
         "<div class='question-answer'>" +
         "<div class='question'>" +
