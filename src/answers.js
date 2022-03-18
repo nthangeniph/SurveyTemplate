@@ -21,6 +21,7 @@ function receivedAnswers() {
         questionId: questionId,
         answer: answers,
       });
+      return;
     }
 
     questionsAnswers.push({
