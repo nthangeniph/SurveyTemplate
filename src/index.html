@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <title>Survey Template</title>
   </head>
@@ -12,9 +13,14 @@
     <div class="main-container">
       <h1 class="survey-header">SURVEY TEMPLATE</h1>
       <div class="questions-container"></div>
-      <button class="submitting-answers">Submit</button>
+      <div class="button-section">
+        <button class="submitting-prev">&#8678; Back</button>
+        <button class="submitting-answers"><i class="fa fa-save"></i> Submit</button>
+        <button class="submitting-next">Next &#8680;</button>
+      </div>
     </div>
 
+    <script src="./utilis.js"></script>
     <script src="./main.js"></script>
     <script src="./answers.js"></script>
   </body>

@@ -1,9 +1,13 @@
 .main-container {
   background-color: rgb(224, 233, 233);
   width: 55%;
-  height: 900px;
+  height: auto;
   margin: 1% auto;
   border-radius: 2%;
+  min-height: 45rem;
+}
+.questions-container {
+  margin-bottom: 25px;
 }
 
 .survey-header {
@@ -72,6 +76,7 @@ h2 {
   justify-content: center;
   align-items: center;
   margin-left: -11rem;
+  margin-bottom: 15px;
 }
 
 .answer-textAreaField {
@@ -90,18 +95,44 @@ h2 {
 .radioQuestions {
   display: block;
 }
-
+.button-section {
+  position: relative;
+  top: 3%;
+  right: -35%;
+  bottom: 10px;
+}
 .submitting-answers {
   background-color: orange;
   color: white;
-  width: 11rem;
+  width: 8rem;
   height: 3rem;
   border-radius: 5px;
-  position: relative;
-  top: 3%;
-  left: 40%;
 }
+.submitting-prev {
+  background-color: orangered;
+  color: white;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 5px;
+}
+
+.submitting-next {
+  background-color: yellowgreen;
+  color: white;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 5px;
+}
+
 .submitting-answers:hover {
   cursor: pointer;
-  box-shadow: 5px 10px red;
+  box-shadow: 5px 10px black;
+}
+.submitting-prev:hover {
+  cursor: pointer;
+  box-shadow: 5px 10px black;
+}
+.submitting-next:hover {
+  cursor: pointer;
+  box-shadow: 5px 10px black;
 }
